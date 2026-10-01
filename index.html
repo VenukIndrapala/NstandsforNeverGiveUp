@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dog.css">
     <link rel="stylesheet" href="toggle.css">
+    <link rel="stylesheet" href="bear.css">
 </head>
 <body>
 
@@ -82,6 +83,16 @@
             </div>
         </div>
 
+        <!-- Bear feeding game (bottom left) -->
+        <div id="bear-area" class="bear-area show-message">
+            <div class="bear-corner">
+                <p class="bear-prompt">Gotta eat to clock bestie</p>
+                <div id="bear-box" class="bear-box">
+                    <div id="bear-scale" class="bear-scale"></div>
+                </div>
+            </div>
+        </div>
+
         <!-- Toggle (top right) -->
         <div class="toggle-corner">
             <input type="checkbox" id="snoopy-toggle" class="switch" aria-label="Toggle Snoopy's message">
@@ -125,6 +136,15 @@
         </svg>
     </main>
 
+    <!-- STAGE 4: Placeholder scene (shown after the bear has eaten 7 donuts) -->
+    <main id="stage-next" class="stage">
+        <div class="placeholder">
+            <h2>Next animation goes here</h2>
+            <p>Placeholder for the next scene</p>
+        </div>
+    </main>
+
     <script src="script.js"></script>
+    <script src="bear.js"></script>
 </body>
 </html>
