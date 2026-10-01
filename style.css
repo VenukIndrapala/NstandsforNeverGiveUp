@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Consolas, monospace;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    height: 100%;
+    background: #111;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+/* ---------- Stages ---------- */
+.stage {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
+.stage.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ---------- Scanner ---------- */
+.scan {
+    --p: 0; /* scan progress, 0 to 1, set by script.js */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.fingerprint {
+    position: relative;
+    width: min(300px, 70vw);
+    height: min(300px, 70vw);
+    background: url(https://assets.codepen.io/4421919/fingerprint.png) center / 100% 100% no-repeat;
+    touch-action: none; /* stops scrolling/zooming while holding */
+    cursor: pointer;
+}
+
+/* Bright fingerprint revealed as the line moves down */
+.fingerprint::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(var(--p) * 100%);
+    background: url(https://assets.codepen.io/4421919/fingerprint+%281%29.png) top left / min(300px, 70vw) no-repeat;
+}
+
+/* Scan line: only visible while progress is above 0 */
+.fingerprint::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: calc(var(--p) * 100%);
+    width: 100%;
+    height: 8px;
+    margin-top: -4px;
+    background: #3fefef;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.scan.holding .fingerprint::after {
+    opacity: 1;
+}
+
+/* ---------- Status text ---------- */
+.status {
+    text-transform: uppercase;
+    font-size: 1.6em;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    color: #3fefef;
+    filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
+}
+
+/* Soft pulse when waiting for the user's thumb */
+.status.idle {
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* Blinking while scanning (same feel as the original) */
+.status.scanning {
+    animation: blink 0.5s steps(1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.35; }
+    50%      { opacity: 1; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50%      { opacity: 1; }
+}
+
+.progress-text {
+    margin-top: 8px;
+    color: #3fefef;
+    opacity: 0.7;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+}
+
+/* ---------- Success flash ---------- */
+.flash {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, #3fefef 0%, #ffffff 40%, transparent 75%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.flash.go {
+    animation: flash 0.9s ease-out forwards;
+}
+
+@keyframes flash {
+    0%   { opacity: 0; }
+    30%  { opacity: 0.9; }
+    100% { opacity: 0; }
+}
+
+/* ---------- Placeholder stage ---------- */
+.placeholder {
+    text-align: center;
+    color: #3fefef;
+    padding: 20px;
+}
+
+.placeholder h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.placeholder p {
+    opacity: 0.6;
+}
