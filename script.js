@@ -103,11 +103,13 @@
         snoopyText.classList.toggle('show', toggle.checked);
     });
 
-    // After the bear has eaten 7 donuts: dog scene fades to the placeholder scene
-    const stageNext = document.getElementById('stage-next');
+    // After the bear has eaten 7 donuts: dog scene fades to the hockey game
+    const stageHockey = document.getElementById('stage-hockey');
     document.addEventListener('bear-complete', function () {
         stageDog.classList.remove('active');
-        stageNext.classList.add('active');
+        stageHockey.classList.add('active');
+        // Tell hockey.js the scene is on screen so it can start the game
+        document.dispatchEvent(new CustomEvent('hockey-show'));
     });
 
     render();
