@@ -96,5 +96,12 @@
     // Stop the long-press context menu / text selection on phones
     document.addEventListener('contextmenu', function (e) { e.preventDefault(); });
 
+    // Toggle in the dog scene: fades Snoopy's message in/out
+    const toggle = document.getElementById('snoopy-toggle');
+    const snoopyText = document.getElementById('snoopy-text');
+    toggle.addEventListener('change', function () {
+        snoopyText.classList.toggle('show', toggle.checked);
+    });
+
     render();
 })();
