@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
     <title>Hold to Scan</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dog.css">
 </head>
 <body>
 
@@ -23,12 +24,87 @@
         <h3 class="status message">Yeah she is 1000% the dragon warrior who is going to clock bestie</h3>
     </main>
 
-    <!-- STAGE 3: Placeholder for the next animation -->
-    <main id="stage-next" class="stage">
-        <div class="placeholder">
-            <h2>Next animation goes here</h2>
-            <p>Placeholder for stage 2</p>
+    <!-- STAGE 3: Dog scene (dog on the left, slot on the right for the next animation) -->
+    <main id="stage-dog" class="stage">
+        <div class="dog-scene">
+            <div class="dog-zone">
+                <div class="dog-wrap">
+                <div class="husky">
+                  <div class="mane">
+                    <div class="coat"></div>
+                  </div>
+                  <div class="body">
+                    <div class="head">
+                      <div class="ear"></div>
+                      <div class="ear"></div>
+                      <div class="face">
+                        <div class="eye"></div>
+                        <div class="eye"></div>
+                        <div class="nose"></div>
+                        <div class="mouth">
+                          <div class="lips"></div>
+                          <div class="tongue"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="torso"></div>
+                  </div>
+                  <div class="legs">
+                    <div class="front-legs">
+                      <div class="leg"></div>
+                      <div class="leg"></div>
+                    </div>
+                    <div class="hind-leg">
+                    </div>
+                  </div>
+                  <div class="tail">
+                    <div class="tail">
+                      <div class="tail">
+                        <div class="tail">
+                          <div class="tail">
+                            <div class="tail">
+                              <div class="tail"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+            <div class="scene-slot" id="scene-slot">
+                <!-- Next animation for this scene goes here -->
+            </div>
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0" style="position:absolute" aria-hidden="true">
+          <defs>
+
+        
+            <filter id="squiggly-0">
+              <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/>
+              <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="squiggly-1">
+              <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+            </filter>
+        
+            <filter id="squiggly-2">
+              <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="squiggly-3">
+              <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+            </filter>
+        
+            <filter id="squiggly-4">
+              <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
+            </filter>
+          </defs> 
+        </svg>
     </main>
 
     <script src="script.js"></script>
