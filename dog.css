@@ -1145,7 +1145,7 @@
       background: #4F8EDB;
     }
 
-    :where(#stage-dog) div:before, :where(#stage-dog) div:after {
+    :where(.dog-zone) div:before, :where(.dog-zone) div:after {
       content: "";
       display: block;
       position: absolute;
@@ -1583,7 +1583,7 @@
 }
 
 /* The original page-wide rule, scoped (zero specificity so the dog's own rules still win) */
-:where(#stage-dog) *, :where(#stage-dog) *:before, :where(#stage-dog) *:after {
+:where(.dog-zone) *, :where(.dog-zone) *:before, :where(.dog-zone) *:after {
   box-sizing: border-box;
   position: relative;
 }
