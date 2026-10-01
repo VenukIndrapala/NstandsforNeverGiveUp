@@ -103,5 +103,12 @@
         snoopyText.classList.toggle('show', toggle.checked);
     });
 
+    // After the bear has eaten 7 donuts: dog scene fades to the placeholder scene
+    const stageNext = document.getElementById('stage-next');
+    document.addEventListener('bear-complete', function () {
+        stageDog.classList.remove('active');
+        stageNext.classList.add('active');
+    });
+
     render();
 })();
