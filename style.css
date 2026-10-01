@@ -111,6 +111,15 @@ html, body {
     50%      { opacity: 1; }
 }
 
+/* Message after the scan: same font, size, style and colour as .status */
+.status.message {
+    margin-top: 0;
+    max-width: 90vw;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 1.4;
+}
+
 .progress-text {
     margin-top: 8px;
     color: #3fefef;
