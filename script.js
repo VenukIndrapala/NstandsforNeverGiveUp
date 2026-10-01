@@ -105,11 +105,18 @@
 
     // After the bear has eaten 7 donuts: dog scene fades to the hockey game
     const stageHockey = document.getElementById('stage-hockey');
+    const stageFireworks = document.getElementById('stage-fireworks');
     document.addEventListener('bear-complete', function () {
         stageDog.classList.remove('active');
         stageHockey.classList.add('active');
-        // Tell hockey.js the scene is on screen so it can start the game
         document.dispatchEvent(new CustomEvent('hockey-show'));
+    });
+
+    // After the player wins the hockey game: fade to the fireworks (final scene)
+    document.addEventListener('hockey-won', function () {
+        stageHockey.classList.remove('active');
+        stageFireworks.classList.add('active');
+        document.dispatchEvent(new CustomEvent('fireworks-show'));
     });
 
     render();
