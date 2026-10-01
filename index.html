@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="dog.css">
     <link rel="stylesheet" href="toggle.css">
     <link rel="stylesheet" href="bear.css">
+    <link rel="stylesheet" href="hockey.css">
 </head>
 <body>
 
@@ -136,15 +137,16 @@
         </svg>
     </main>
 
-    <!-- STAGE 4: Placeholder scene (shown after the bear has eaten 7 donuts) -->
-    <main id="stage-next" class="stage">
-        <div class="placeholder">
-            <h2>Next animation goes here</h2>
-            <p>Placeholder for the next scene</p>
+    <!-- STAGE 4: Air hockey game (shown after the bear has eaten 7 donuts) -->
+    <main id="stage-hockey" class="stage">
+        <div class="game-wrap">
+            <canvas id="gameCanvas" tabindex="0" aria-label="Air hockey game. Move the blue mallet to hit the puck. First to 5 points wins."></canvas>
         </div>
+        <p id="gameStatus" class="sr-only" aria-live="polite"></p>
     </main>
 
     <script src="script.js"></script>
     <script src="bear.js"></script>
+    <script src="hockey.js"></script>
 </body>
 </html>
