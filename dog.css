@@ -1111,7 +1111,7 @@
         transform: rotateZ(-16deg) rotateY(180deg);
       }
     }
-    :where(#stage-dog) *, :where(#stage-dog) *:before, :where(#stage-dog) *:after {
+    .husky, .husky *, .husky *:before, .husky *:after {
       -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
               animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
     }
