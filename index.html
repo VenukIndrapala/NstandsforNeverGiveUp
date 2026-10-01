@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
     <title>Hold to Scan</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dog.css">
+    <link rel="stylesheet" href="toggle.css">
 </head>
 <body>
 
@@ -76,6 +80,20 @@
             <div class="scene-slot" id="scene-slot">
                 <!-- Next animation for this scene goes here -->
             </div>
+        </div>
+
+        <!-- Toggle (top right) -->
+        <div class="toggle-corner">
+            <input type="checkbox" id="snoopy-toggle" class="switch" aria-label="Toggle Snoopy's message">
+        </div>
+
+        <!-- Message revealed by the toggle -->
+        <div id="snoopy-text" class="snoopy-text" aria-live="polite">
+            <p>This is snoopy and snoopy loves snooping around. Snoopy has now snooped you and he has something snoopy to say and that is,</p>
+            <p>Roses are red, violets are blue,<br>
+            Don&#39;t let bestie go snooping on you.<br>
+            If they do, I&#39;ll call them a poo,<br>
+            Cause only big losers go poo-poo-poo!</p>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0" style="position:absolute" aria-hidden="true">
           <defs>
