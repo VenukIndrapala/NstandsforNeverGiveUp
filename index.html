@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="toggle.css">
     <link rel="stylesheet" href="bear.css">
     <link rel="stylesheet" href="hockey.css">
+    <link rel="stylesheet" href="fireworks.css">
 </head>
 <body>
 
@@ -139,14 +140,21 @@
 
     <!-- STAGE 4: Air hockey game (shown after the bear has eaten 7 donuts) -->
     <main id="stage-hockey" class="stage">
-        <div class="game-wrap">
-            <canvas id="gameCanvas" tabindex="0" aria-label="Air hockey game. Move the blue mallet to hit the puck. First to 5 points wins."></canvas>
-        </div>
-        <p id="gameStatus" class="sr-only" aria-live="polite"></p>
+        <section class="game-wrap" aria-label="Air hockey game">
+            <canvas id="gameCanvas" aria-label="Air hockey table. Drag, or use the arrow keys or WASD, to move the blue mallet."></canvas>
+            <div class="sr-only" id="gameStatus" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <!-- STAGE 5: Fireworks (final scene, shown after the player wins the hockey game) -->
+    <main id="stage-fireworks" class="stage">
+        <canvas id="canvas"></canvas>
     </main>
 
     <script src="script.js"></script>
     <script src="bear.js"></script>
     <script src="hockey.js"></script>
+    <script src="jquery.js"></script>
+    <script src="fireworks.js"></script>
 </body>
 </html>
