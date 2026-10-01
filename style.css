@@ -146,20 +146,3 @@ html, body {
     30%  { opacity: 0.9; }
     100% { opacity: 0; }
 }
-
-/* ---------- Placeholder stage ---------- */
-.placeholder {
-    text-align: center;
-    color: #3fefef;
-    padding: 20px;
-}
-
-.placeholder h2 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.placeholder p {
-    opacity: 0.6;
-}
