@@ -1,6 +1,6 @@
 (function () {
     const SCAN_DURATION = 3000; // ms of continuous holding for a full scan
-    const MESSAGE_DURATION = 5000; // ms the message stays on screen before the placeholder
+    const MESSAGE_DURATION = 5000; // ms the message stays on screen before the dog scene
 
     const scanEl = document.querySelector('.scan');
     const finger = document.getElementById('fingerprint');
@@ -9,7 +9,7 @@
     const flashEl = document.getElementById('flash');
     const stageScan = document.getElementById('stage-scan');
     const stageMessage = document.getElementById('stage-message');
-    const stageNext = document.getElementById('stage-next');
+    const stageDog = document.getElementById('stage-dog');
 
     let progress = 0;
     let holding = false;
@@ -81,10 +81,10 @@
             stageMessage.classList.add('active');
         }, 500);
 
-        // Let the message be read, then move on to the placeholder
+        // Let the message be read, then move on to the dog scene
         setTimeout(function () {
             stageMessage.classList.remove('active');
-            stageNext.classList.add('active');
+            stageDog.classList.add('active');
         }, 500 + MESSAGE_DURATION);
     }
 
