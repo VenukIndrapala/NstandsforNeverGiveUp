@@ -91,7 +91,7 @@ $(function () {
 	};
 
 	// The two final messages
-	var messages = ["Congratulations", "Now Clock Bestie As Well"];
+	var messages = ["Congrats", "Now Clock Bestie As Well"];
 	var currentLetters = [];
 
 	// Lay a message out in rows that fit the screen (smaller letters on phones)
