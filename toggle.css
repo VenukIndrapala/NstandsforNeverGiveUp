@@ -1,17 +1,8 @@
 /* Toggle button (from the modern toggle animation). Toggle only: no page background, dark mode or heading. */
 
-/* Fonts for Snoopy's message. The @import must stay at the top of this file. */
-@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+/* Font for Snoopy's message. The @import must stay at the top of this file. */
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
-/* Chunky Puffly: put the font file at fonts/ChunkyPuffly.ttf next to this stylesheet.
-   Until it is there, the chunky Titan One font below is used instead. */
-@font-face {
-  font-family: 'Chunky Puffly';
-  src: local('Chunky Puffly'), local('ChunkyPuffly-Regular'), url('fonts/ChunkyPuffly.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 #stage-dog .switch:after {
         content: '';
         width: 46px;
@@ -191,7 +182,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 70px 14px 20px;
-  font-family: 'Chunky Puffly', 'Titan One', 'Fuzzy Bubbles', 'Comic Sans MS', cursive;
+  font-family: 'Chewy', 'Bubblegum Sans', 'Comic Sans MS', cursive;
   font-size: clamp(0.8rem, min(3.6vw, 4.2vh), 1.35rem);
   line-height: 1.35;
   color: #FFFFFF;
@@ -205,6 +196,11 @@
 #stage-dog .snoopy-text.show {
   opacity: 1;
   transform: translateY(-20px);
+}
+
+/* The site-wide "* { font-family }" rule would otherwise override the font on these paragraphs */
+#stage-dog .snoopy-text p {
+  font-family: inherit;
 }
 
 #stage-dog .snoopy-text p + p {
