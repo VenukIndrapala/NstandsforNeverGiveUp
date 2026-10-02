@@ -178,20 +178,20 @@
   flex-direction: column;
   justify-content: center;
   padding: 70px 14px 20px;
-  font-family: 'Bubblegum Sans', 'Chewy', 'Comic Sans MS', cursive;
+  font-family: 'Fuzzy Bubbles', 'Bubblegum Sans', 'Comic Sans MS', cursive;
   font-size: clamp(0.8rem, min(3.6vw, 4.2vh), 1.35rem);
   line-height: 1.35;
   color: #FFFFFF;
   text-align: center;
   opacity: 0;
-  transform: translateY(-40px);
+  transform: translateY(-60px);
   transition: opacity 0.9s ease, transform 0.9s ease;
   pointer-events: none;
 }
 
 #stage-dog .snoopy-text.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(-20px);
 }
 
 #stage-dog .snoopy-text p + p {
